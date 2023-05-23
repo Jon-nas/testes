@@ -23,3 +23,31 @@ print(f"O valor da variável b é: {b}")
 a, b = b, a
 print(f"O valor da variável a é: {a}")
 print(f"O valor da variável b é: {b}")
+
+
+
+num = 10   # Entrada e saída de dados
+print(num)
+
+nome = input('Entre com seu nome: ')
+print(nome)
+
+numero = eval(input('Entre com um inteiro: '))
+numero = numero + 2
+print(numero)
+
+peso = eval(input('Entre com o seu peso: '))
+altura = eval(input('Entre com sua altura: '))
+imc = peso/(altura**2)
+print('IMC = ', imc)
+
+def foo(a):
+    return a+a+a
+
+b = 1
+
+foo(b)
+foo(b)
+foo(b)
+
+print(b)
