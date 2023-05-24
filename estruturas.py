@@ -65,3 +65,20 @@ for num in lista:
     if(num%2==0):
         soma = soma + num
 print(f'O somatório dos elementos pares é: {soma}')
+
+
+for item in range(2, 9, 3):
+    print(item)
+
+
+
+nome = input("Entre com seu nome: \n")
+for letra in nome:
+    print(letra)
+
+
+
+
+nomes = ['Laura', 'Lis', 'Guilherme', 'Enzo', 'Arthur']
+for nome in nomes:
+    print(nome)
