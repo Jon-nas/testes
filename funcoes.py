@@ -65,3 +65,67 @@ def resultado1(numero, resultado):
 resultado = primo(numero)
 msg = resultado1(numero, resultado)
 print(msg)
+
+
+
+escolha = input("Escolha uma opção de função: 1 ou 2\n")
+if escolha == "1":
+    def func1(x):
+        return x + 1
+    s = func1(10)
+
+else:
+    def func2(x):
+        return x + 2
+    s = func2(10)
+
+print(s)
+
+
+
+def taximetro(distancia, multiplicador=1):
+    largada = 3
+    km_rodado = 2
+    valor = (largada + distancia * 
+    km_rodado) * multiplicador
+    return valor
+
+
+pagamento = taximetro(3.5)
+print(pagamento)
+
+
+
+def func1(x):
+    x = 10
+    print(f'Função func1 - x = {x}')
+
+
+def func2(x):
+    x = 20
+    print(f'Função func2 - x = {x}')
+
+
+x = 0
+func1(x)
+func2(x)
+print(f'Programa principal - x = {x}')
+
+
+
+def func1():
+    global x
+    x = 10
+    print(f'Função func1 - x = {x}')
+
+
+def func2():
+    global x
+    x = 20
+    print(f'Função func2 - x = {x}')
+
+
+x = 0
+func1()
+func2()
+print(f'Programa principal - x = {x}')
