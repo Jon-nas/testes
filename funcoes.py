@@ -1,4 +1,4 @@
-def valorMin(lista):
+"""def valorMin(lista):
     minimo = lista [0]
     for element in lista:
         if (element < minimo):
@@ -181,20 +181,38 @@ c=entradaDados()
 delta=calcDelta(a, b, c)
 
 resultado=calculaRaizes(a, b, c, delta)
-print(resultado)
+print(resultado)"""
 
 
+#import dos pacotes necessários
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
 
+#criação de um objeto de mensagem
+msg = MIMEMultipart()
+texto = "Estou enviando um email com Python"
 
-import random
+#parâmetros
+senha = "SUA SENHA"
+msg['From'] = "SEU E-MAIL"
+msg['To'] = "E-MAIL DESTINO"
+msg['Subject'] = "ASSUNTO"
 
-x = random.randint('a', 'b', 'c', 'd')
-y = random.randint(3, 8, 1,10)
+#criação do corpo da mensagem
+msg.attach(MIMEText(texto, 'plain'))
 
-for i in range(10):
-    question = "What is "+str(x)+" x "+str(y)+"? "
-    answer = int(input(question))
-    if answer == x*y:
-        print ("Well done!")
-    else:
-        print("No.")
+#criação do servidor
+server = smtplib.SMTP('smtp.gmail.com: 587')
+server.starttls()
+
+#Login na conta para envio
+server.login(msg['From'], senha)
+
+#envio da mensagem
+server.sendmail(msg['From'], msg['To'], msg.as_string())
+
+#encerramento do servidor
+server.quit()
+
+print('Mensagem enviada com sucesso')

@@ -12,16 +12,16 @@
     <h1>Histograma de uma Distribuição Padrão</h1>
     <div id="grafico"></div>
     <py-script output="grafico">
-import matplotlib.pyplot as plt
-import numpy as np
+        import matplotlib.pyplot as plt
+        import numpy as np
 
-np.random.seed(42)
+        np.random.seed(42)
 
-rv = np.random.standard_normal(100)
+        rv = np.random.standard_normal(100)
 
-fig, ax = plt.subplots()
-ax.hist(rv, bins=30)
-fig
+        fig, ax = plt.subplots()
+        ax.hist(rv, bins=30)
+        fig
     </py-script>
   </body>
 </html>
