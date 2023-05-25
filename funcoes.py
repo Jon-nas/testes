@@ -149,3 +149,52 @@ def taximetro(distancia):
 dist = eval(input("Entre com a distancia a ser percorrida em km: \n"))
 pagamento = taximetro(dist)
 print(f'O valor a pagar é R$ {pagamento}')
+
+
+
+
+
+def entradaDados():
+    coeficiente=quantidade=eval(input('Digite o valor do coeficiente: '))
+    return coeficiente
+
+def calcDelta(a, b, c):
+    delta=b*b-4*a*c
+    return delta
+
+def calculaRaizes(a, b, c, delta):
+    if(delta<0):
+        resultado='A equação não possui raizes nos números reais'
+    elif(delta ==0):
+        x=-b/(2*a)
+        resultado = f'A equação possua paenas a raiz: {x}'
+    else:
+        x1=(-b-(delta))/(2*a)
+        x2=(-b+(delta))/(2*a)
+        resultado=f'A questão possui as raizes: {x1}, {x2}'
+        return resultado
+
+a=entradaDados()
+b=entradaDados()
+c=entradaDados()
+
+delta=calcDelta(a, b, c)
+
+resultado=calculaRaizes(a, b, c, delta)
+print(resultado)
+
+
+
+
+import random
+
+x = random.randint('a', 'b', 'c', 'd')
+y = random.randint(3, 8, 1,10)
+
+for i in range(10):
+    question = "What is "+str(x)+" x "+str(y)+"? "
+    answer = int(input(question))
+    if answer == x*y:
+        print ("Well done!")
+    else:
+        print("No.")

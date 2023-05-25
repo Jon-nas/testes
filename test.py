@@ -89,3 +89,11 @@ print(x) #Diferentemente de outras linguagens, como C, a divisão de dois númer
 print(2 < 3) #tipo bool
 print(2 > 3)
 print(not(2 < 3)) 
+
+
+
+def fatorial(n):
+    if n == 0 or n == 1:
+         return 1
+    else:
+         return n*fatorial(n-1)
