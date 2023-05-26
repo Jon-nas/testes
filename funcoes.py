@@ -185,7 +185,7 @@ print(resultado)"""
 
 
 #import dos pacotes necessários
-from email.mime.multipart import MIMEMultipart
+"""from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
@@ -215,4 +215,59 @@ server.sendmail(msg['From'], msg['To'], msg.as_string())
 #encerramento do servidor
 server.quit()
 
-print('Mensagem enviada com sucesso')
+print('Mensagem enviada com sucesso')"""
+
+
+
+"""import time
+
+x = time.time()
+print(f'Local time: {time.ctime(x)}')"""
+
+
+
+"""while True:
+    try:
+        x = int(input("Digite um número: "))
+        break
+    except ValueError:
+        print("Entre com um número válido.")"""
+        
+        
+
+
+def dividir(x, y):
+    try:
+        resultado = x / y
+        print("A resposta é: ", resultado)
+    except ZeroDivisionError:
+        print("Divisão por zero")
+        
+dividir (3, 0)
+dividir (3, 2)
+
+import math
+print(math.sqrt(36))
+
+
+def foo(n):
+    if n > 1:
+        return n * foo(n-1)
+    return n
+
+print(foo(4))
+
+
+
+a = 0
+for i in range(30):
+    if a%2==0:
+        a+=1
+        continue
+    else:
+        if a%5==0:
+            break
+        else:
+            a+=3
+            
+print(a)
