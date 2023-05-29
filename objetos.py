@@ -259,3 +259,49 @@ y = fusca()
 
 x.faleComigo()
 y.faleComigo()
+
+
+#Exercícios
+veiculos = ['avião', 'carro', 'navio', 'ônibus']
+veiculos_Upercase = [veiculos.upper() for veiculos in veiculos] #Minha resposta
+print(veiculos_Upercase)
+
+f_maiuscula = lambda x: str.upper(x)  #Resposta correta
+nomesMaiusculos = list(map(f_maiuscula, veiculos))
+print(f'nomes maiusculos = {nomesMaiusculos}')
+
+
+
+lista = [0, 1, 1, 2, 3, 5, 8 , 13, 21, 34]
+listaPar = [item for item in lista if item % 2 == 0]  #Minha resposta
+print(listaPar)
+
+fTesteParidade = lambda x: x % 2 == 0  #Resposta correta
+print(f'teste de fTesteParidade(5) = {fTesteParidade(5)}')
+pares = list(filter(fTesteParidade, lista))
+print(f'lista de números pares = {pares}')
+
+
+
+lista_números = [9.56783, 7.57568, 3.00914, 6.2321] 
+lista_precisao = [2, 2, 3, 3]
+listaArredondada = [round(item, precisao) for item, precisao in zip(lista_números, lista_precisao)]  #Minha resposta
+print(listaArredondada)
+
+arreondamento = lambda x, y: round(x, y) #Resposta correta
+resultado = list(map(arreondamento, lista_números, lista_precisao))
+print(resultado)
+
+
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+soma = sum([item for item in numeros])  #Minha resposta
+print(soma)
+
+from functools import reduce  #Resposta correta
+f_soma = lambda x, y: x + y
+resultado = reduce(f_soma, numeros)
+print(resultado)
+
+
+
