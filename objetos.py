@@ -304,4 +304,115 @@ resultado = reduce(f_soma, numeros)
 print(resultado)
 
 
+#inicie a execução de uma thread, cloque ela para esperar 2 segundos e informe o inicio e o final da exução da thread.
 
+import threading  #Minha resposta
+import time
+
+def fThread():
+    print('Inicio da thread')
+    time.sleep(2)
+    print('Fim da thread')
+    
+thread = threading.Thread(target=fThread)
+thread.start()
+thread.join()
+
+from time import sleep   #Resposta correta
+from threading import Thread
+def tarefa(tempo_espera, mensagem):
+    print(f'\nInicializando a tarefa {mensagem}')
+    sleep(tempo_espera)
+    print(f'Conclusão da tarefa {mensagem}')
+thread = Thread(target=tarefa, args=(2, 'Thread em execução'))
+thread.start()
+print('\nAguardando pela execução da thread...')
+thread.join()
+print('A execução foi concluida!')
+
+
+
+
+# inicie a execução de duas threads, cloque a primeira e a segunda thread para esperar,
+# respectivamente 3 e 2 segundos, informe o inicio e o final da exução da thread.
+import threading  #Minha resposta
+import time
+
+def fThread1():
+    print('Inicio da thread 1.')
+    time.sleep(3)
+    print('Fim da thread 1!')
+    
+def fThread2():
+    print('Inicio da thread 2.')
+    time.sleep(2)
+    print('Fim da thread 2!')
+    
+fThread1 = threading.Thread(target=fThread1)
+fThread2 = threading.Thread(target=fThread2)
+
+fThread1.start()
+fThread2.start()
+
+
+from time import sleep   #Resposta correta
+from threading import Thread
+def tarefa(tempo_espera, nome_tarefa):
+    print(f'Iniciandoa a tarefa {nome_tarefa}')
+    sleep(tempo_espera)
+    print(f'Conclusão da tarefa {nome_tarefa}')
+    
+t1 = Thread(target=tarefa, args=(3, 'A'))
+t2 = Thread(target=tarefa, args=(2, 'B'))
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print('A execuçaão foi concluida')
+
+
+
+
+#inicie a execução de duas threads, a primeira deve calcular o cubo de um número,
+# a segunda thread deve calcular o quadrado de um número. Coloque a primeira e a segunda thread
+# para esperar respectivamente 3 e 2 segundos, informe a ordem da exução das threads.
+import threading  #Minha resposta
+import time
+
+def cube(num):
+    time.sleep(3)
+    print(f"O cubo de {num} é {num**3}")
+
+def square(num):
+    time.sleep(2)
+    print(f"O quadrado de {num} é {num**2}")
+
+t1 = threading.Thread(target=cube, args=(3,))
+t2 = threading.Thread(target=square, args=(4,))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+
+from time import sleep   #Resposta correta
+from threading import Thread
+def calcular_cubo(num, tempo_espera):
+    print(f'\nCubo: {num * num * num}')
+    sleep(tempo_espera)
+    print('Conclusão da função calcular_cubo')
+    
+def calcular_quadrado(num, tempo_espera):
+    print(f'\nQuadrado: {num * num}')
+    sleep(tempo_espera)
+    print('Conclusão da função calcular_quadrado')
+    
+tr1 = Thread(target=calcular_quadrado, args=(5, 3))
+tr2 = Thread(target=calcular_cubo, args=(5, 2))
+tr1.start()
+tr2.start()
+tr1.join()
+tr2.join()
+print('A execução foi concluida!')
