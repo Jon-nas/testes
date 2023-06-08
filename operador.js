@@ -25,3 +25,5 @@ console.log(n <= b || b / 2 == 2);
 console.log(n > b && 5 <= b);
 
 resultado = b % 2 == 0 ? "par" : "impar";
+
+print(6);
